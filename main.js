@@ -27,10 +27,26 @@ const makeSingular = function(dino) {
   }
 
   const singleDino = makeDino(newDinoName, dinoTime, dinoIsACarnivore, dinoIsExtinct);
-  return singleDino
+  return singleDino;
 }
 
-const truncateSpecies = function() {
+const truncateSpecies = function(dino) {
+  const len = dino.species.length;
+  let truncatedName = "";
+
+  if(len <= 10) {
+    truncatedName = dino.species;
+  } else {
+    truncatedName = dino.species.substring(0, 7) + "...";
+  }
+
+ const dinoTime = dino.period;
+ const dinoIsACarnivore = dino.carnivore;
+ const dinoIsExtinct = dino.extinct;
+
+  const truncatedDino = makeDino(truncatedName, dinoTime, dinoIsACarnivore, dinoIsExtinct);
+  
+  return truncatedDino;
 }
 
 const makeExtinct = function() {
