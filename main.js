@@ -49,8 +49,14 @@ const truncateSpecies = function(dino) {
   return truncatedDino;
 }
 
-const makeExtinct = function() {
+const makeExtinct = function(dino) {
+  const dinoSpecies = dino.species + "...";
+  const dinoTime = dino.period;
+  const dinoDiet = dino.carnivore;
+  
+  const extinctDino = makeDino(dinoSpecies, dinoTime, dinoDiet, true);
 
+  return extinctDino;
 }
 
 module.exports = {
